@@ -1,0 +1,36 @@
+﻿@model BlowOut.Models.Instrument
+
+<h2>Rent</h2>
+
+<div>
+    <h4>Instrument</h4>
+    <hr />
+    <img src="@ViewBag.Location" />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+    <button onclick="changePriceToNew()">New</button><button onclick="changePriceToUsed()">Used</button>
+    <p>Price:</p>
+    <p id="Price"></p>
+    <p>After 18 months of renting, you own the instrument. If you return it at any time before 3 months 
+    there will be a $200 re-stocking fee. If you return it after 3 months you forfeit any equity in the 
+    instrument.</p>
+</div>
+<script>
+    function changePriceToNew() {
+        // Change the price to the new price
+        document.getElementById("Price").innerHTML = @Html.DisplayFor(model => model.NewPrice);
+    }
+
+    function changePriceToUsed() {
+        // Change the price to the used price
+        document.getElementById("Price").innerHTML = @Html.DisplayFor(model => model.UsedPrice);
+    }
+</script>
