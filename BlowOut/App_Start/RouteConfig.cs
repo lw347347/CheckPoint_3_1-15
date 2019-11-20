@@ -23,7 +23,7 @@ namespace BlowOut
             "Contact",                                              // Route name
             "{controller}/{action}/{name}/{email}",                           // URL with parameters
             new { controller = "Home", action = "Index", name = "", email = "" }  // Parameter defaults
-        );
+            );
         }
     }
 }

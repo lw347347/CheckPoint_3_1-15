@@ -1,10 +1,13 @@
-﻿using System;
+﻿using BlowOut.DALL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using BlowOut.Models;
+using System.Data.Entity;
 
 namespace BlowOut
 {
@@ -12,6 +15,8 @@ namespace BlowOut
     {
         protected void Application_Start()
         {
+            Database.SetInitializer<RentalsContext>(null);
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
