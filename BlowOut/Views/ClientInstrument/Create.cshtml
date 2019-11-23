@@ -13,7 +13,7 @@
 <div class="form-horizontal">
     <h4>Rental Information for the @Html.DisplayFor(model => model.Instrument.Name)</h4>
     <hr />
-    <img src="@ViewBag.Location" />
+    <img src="~/Content/Images/@ViewBag.Location" />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.Instrument.Name)
     @Html.HiddenFor(model => model.Instrument.Price)

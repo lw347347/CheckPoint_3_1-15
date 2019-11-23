@@ -70,7 +70,7 @@ namespace BlowOut.Controllers
             clientInstrument.Instrument = listOfInstruments[index];
 
             // Create the reference to the right image
-            ViewBag.Location = "../Content/Images/" + clientInstrument.Instrument.Name + ".jpg";
+            ViewBag.Location = clientInstrument.Instrument.Name + ".jpg";
 
             // Add the location to the model
             clientInstrument.Instrument.Location = ViewBag.Location;
@@ -144,7 +144,7 @@ namespace BlowOut.Controllers
             ViewBag.Result = "Thanks, " + clientInstrument.Client.FirstName + " for renting a " +
                 clientInstrument.Instrument.Name + ". Your order number is " + clientInstrument.Instrument.ClientID +
                 ". Your monthly payment is $" + clientInstrument.Instrument.Price + ". The total amount paid" +
-                " after 18 months is " + (clientInstrument.Instrument.Price * 18) + ".";
+                " after 18 months is $" + (clientInstrument.Instrument.Price * 18) + ".";
 
             return View(clientInstrument);
         }
