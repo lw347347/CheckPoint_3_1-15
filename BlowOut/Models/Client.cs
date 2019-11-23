@@ -12,13 +12,17 @@ namespace BlowOut.Models
     {
         [Key]
         public int ClientID { get; set; }
+        [Required]
         public string FirstName { get; set; }
+        [Required]
         public string LastName { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
         public string State { get; set; }
         public int Zipcode { get; set; }
+        [Required]
         public string EmailAddress { get; set; }
-        public int PhoneNumber { get; set; }
+        [Required]
+        public long PhoneNumber { get; set; }
     }
 }
