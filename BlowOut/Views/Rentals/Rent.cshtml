@@ -5,7 +5,8 @@
 <div>
     <h4>Instrument</h4>
     <hr />
-    <img src="@ViewBag.Location" />
+    @{ string location = Model.Name + ".jpg";}
+    <img src="../../Content/Images/@location" />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Name)
@@ -23,14 +24,3 @@
     there will be a $200 re-stocking fee. If you return it after 3 months you forfeit any equity in the 
     instrument.</p>
 </div>
-<script>
-    function changePriceToNew() {
-        // Change the price to the new price
-        document.getElementById("Price").innerHTML = @Html.DisplayFor(model => model.NewPrice);
-    }
-
-    function changePriceToUsed() {
-        // Change the price to the used price
-        document.getElementById("Price").innerHTML = @Html.DisplayFor(model => model.UsedPrice);
-    }
-</script>

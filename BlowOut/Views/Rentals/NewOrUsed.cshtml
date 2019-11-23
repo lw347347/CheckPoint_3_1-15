@@ -1,0 +1,53 @@
+﻿@model IEnumerable<BlowOut.Models.Instrument>
+
+@{
+    ViewBag.Title = "NewOrUsed";
+}
+
+<h2>NewOrUsed</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Image
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.New)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClientID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @{ string location = item.Name + ".jpg";}
+            <img src="~/Content/Images/@location" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.New)
+        </td>
+        <td>
+            @Html.ActionLink("Rent", "Rent", new { id=item.InstrumentID })
+        </td>
+    </tr>
+}
+
+</table>

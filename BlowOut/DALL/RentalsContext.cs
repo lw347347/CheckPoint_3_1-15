@@ -17,5 +17,7 @@ namespace BlowOut.DALL
 
         public DbSet<Client> Clients { get; set; }
         public DbSet<Instrument> Instruments { get; set; }
+
+        public System.Data.Entity.DbSet<BlowOut.Models.ClientInstrument> ClientInstruments { get; set; }
     }
 }

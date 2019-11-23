@@ -14,8 +14,8 @@ namespace BlowOut.Models
         public int InstrumentID { get; set; }
         public string Name { get; set; }
         public string Location { get; set; }
-        public int NewPrice { get; set; }
-        public int UsedPrice { get; set; }
+        public int Price { get; set; }
+        public bool New { get; set; }
         public int ClientID { get; set; }
     }
 }
