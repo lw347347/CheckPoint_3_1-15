@@ -15,13 +15,13 @@ namespace BlowOut.Controllers
     {
         private RentalsContext db = new RentalsContext();
 
-        // GET: Instruments
+        // GET: Instruments1
         public ActionResult Index()
         {
             return View(db.Instruments.ToList());
         }
 
-        // GET: Instruments/Details/5
+        // GET: Instruments1/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,18 +36,18 @@ namespace BlowOut.Controllers
             return View(instrument);
         }
 
-        // GET: Instruments/Create
+        // GET: Instruments1/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Instruments/Create
+        // POST: Instruments1/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "InstrumentID,Name,Location,NewPrice,UsedPrice,ClientID")] Instrument instrument)
+        public ActionResult Create([Bind(Include = "InstrumentID,Name,Location,Price,New,ClientID")] Instrument instrument)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +59,7 @@ namespace BlowOut.Controllers
             return View(instrument);
         }
 
-        // GET: Instruments/Edit/5
+        // GET: Instruments1/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -74,12 +74,12 @@ namespace BlowOut.Controllers
             return View(instrument);
         }
 
-        // POST: Instruments/Edit/5
+        // POST: Instruments1/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "InstrumentID,Name,Location,NewPrice,UsedPrice,ClientID")] Instrument instrument)
+        public ActionResult Edit([Bind(Include = "InstrumentID,Name,Location,Price,New,ClientID")] Instrument instrument)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace BlowOut.Controllers
             return View(instrument);
         }
 
-        // GET: Instruments/Delete/5
+        // GET: Instruments1/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,7 +105,7 @@ namespace BlowOut.Controllers
             return View(instrument);
         }
 
-        // POST: Instruments/Delete/5
+        // POST: Instruments1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
