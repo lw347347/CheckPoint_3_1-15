@@ -23,6 +23,6 @@ namespace BlowOut.Models
         [Required]
         public string EmailAddress { get; set; }
         [Required]
-        public long PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
     }
 }
