@@ -113,6 +113,12 @@ namespace BlowOut.Controllers
             Client client = db.Clients.Find(id);
             db.Clients.Remove(client);
             db.SaveChanges();
+
+            // Change the value to null in the clientInstruments
+            db.Instruments.FirstOrDefault(x => x.ClientID == client.ClientID).ClientID = null;
+
+            db.SaveChanges();
+
             return RedirectToAction("Index");
         }
 
