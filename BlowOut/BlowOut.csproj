@@ -133,6 +133,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstrumentsController.cs" />
     <Compile Include="Controllers\RentalsController.cs" />
+    <Compile Include="Controllers\UpdateDataController.cs" />
     <Compile Include="DALL\RentalsContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -214,6 +215,13 @@
     <Content Include="Views\Instruments\Index.cshtml" />
     <Content Include="Views\Home\UpdateData.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\UpdateDataEdit.cshtml" />
+    <Content Include="Views\Home\UpdateDataDelete.cshtml" />
+    <Content Include="Views\UpdateData\Create.cshtml" />
+    <Content Include="Views\UpdateData\Delete.cshtml" />
+    <Content Include="Views\UpdateData\Details.cshtml" />
+    <Content Include="Views\UpdateData\Edit.cshtml" />
+    <Content Include="Views\UpdateData\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
