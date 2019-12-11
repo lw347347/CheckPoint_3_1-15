@@ -59,6 +59,13 @@ namespace BlowOut.Controllers
             return RedirectToAction("UpdateData");
         }
 
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon(); // it will clear the session at the end of request
+            return View("Index");
+        }
+
         [Authorize]
         public ActionResult UpdateData()
         {
